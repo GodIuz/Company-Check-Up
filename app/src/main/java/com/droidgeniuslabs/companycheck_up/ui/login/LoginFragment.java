@@ -1,8 +1,6 @@
 package com.droidgeniuslabs.companycheck_up.ui.login;
 
 import static com.droidgeniuslabs.companycheck_up.Utilities.NetworkUtils.isNetworkAvailable;
-
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
@@ -13,13 +11,11 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-
 import com.droidgeniuslabs.companycheck_up.R;
 
 public class LoginFragment extends Fragment {
