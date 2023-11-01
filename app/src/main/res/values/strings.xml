@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Company Check-Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me.</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="dob">Date of Birth</string>
+    <string name="back">Back</string>
+    <string name="welcome">Welcome !</string>
+    <string name="new_data">New data</string>
+    <string name="load_data">Load data</string>
+    <string name="show_password">Show Password</string>
+</resources>
