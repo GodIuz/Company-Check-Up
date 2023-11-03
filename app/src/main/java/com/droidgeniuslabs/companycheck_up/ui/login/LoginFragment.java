@@ -21,9 +21,9 @@ import com.droidgeniuslabs.companycheck_up.R;
 public class LoginFragment extends Fragment {
 
 
-   /* public static LoginFragment newInstance() {
+    public static LoginFragment newInstance() {
         return new LoginFragment();
-    }*/
+    }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
