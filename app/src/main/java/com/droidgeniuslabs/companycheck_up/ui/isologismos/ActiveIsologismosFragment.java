@@ -1,6 +1,5 @@
 package com.droidgeniuslabs.companycheck_up.ui.isologismos;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -40,13 +39,13 @@ public class ActiveIsologismosFragment extends Fragment {
         EditText editTextPagio = view.findViewById(R.id.editTextPagio);
         EditText editTextApothema = view.findViewById(R.id.editTextApothema);
         EditText editTextApaitiseis = view.findViewById(R.id.editTextTApaitiseis);
-        EditText editTextDithesima = view.findViewById(R.id.editTextDiathesima);
+        EditText editTextDiathesima = view.findViewById(R.id.editTextDiathesima);
 
         pagia=Float.parseFloat(editTextPagio.getText().toString());
         apothema=Float.parseFloat(editTextApothema.getText().toString());
         apaitiseis=Float.parseFloat(editTextApaitiseis.getText().toString());
-        diathesima=Float.parseFloat(editTextApaitiseis.getFontFeatureSettings());
-
+        diathesima=Float.parseFloat(editTextDiathesima.getText().toString());
+        active=pagia+apothema+apaitiseis+diathesima;
 
         FirebaseApp.initializeApp(requireContext());
         FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -64,7 +63,7 @@ public class ActiveIsologismosFragment extends Fragment {
             public void onClick(View v) {
 
                 // Get a reference to the Firestore collection
-                CollectionReference collection = db.collection("Active Isologismos");
+                CollectionReference collection = db.collection("/Users/UserData/Active Isologismos/Active Isologismos");
 
                     // Add a document with the data
                 collection.add(activeIsologismosmosData)

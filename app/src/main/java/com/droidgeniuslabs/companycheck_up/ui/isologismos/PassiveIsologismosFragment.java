@@ -60,27 +60,22 @@ public class PassiveIsologismosFragment extends Fragment {
             }
         });
 
-        float finalKefalaio = kefalaio;
-        float finalProvlepseis = provlepseis;
-        float finalM_ypo = m_ypo;
-        float finalB_ypo = b_ypo;
-        float finalPassive = passive;
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Get a reference to the Firestore collection
-                CollectionReference collection = db.collection("Passivo Isologismoms");
+                CollectionReference collection = db.collection("/Users/UserData/Active Isologismos/Active Isologismos/Passive Isologismos/Passive Isologismos");
 
                 collection.add(passiveIsologismosData)
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
                                 PassiveIsologismosData passiveIsologismosData = new PassiveIsologismosData();
-                                passiveIsologismosData.setKefalaio(finalKefalaio);
-                                passiveIsologismosData.setProvlepseis(finalProvlepseis);
-                                passiveIsologismosData.setM_ypo(finalM_ypo);
-                                passiveIsologismosData.setB_ypo(finalB_ypo);
-                                passiveIsologismosData.setPassive(finalPassive);
+                                passiveIsologismosData.setKefalaio(kefalaio);
+                                passiveIsologismosData.setProvlepseis(provlepseis);
+                                passiveIsologismosData.setM_ypo(m_ypo);
+                                passiveIsologismosData.setB_ypo(b_ypo);
+                                passiveIsologismosData.setPassive(passive);
 
                                 Snackbar.make(view,"Data Saved",Snackbar.LENGTH_SHORT).show();
                             }

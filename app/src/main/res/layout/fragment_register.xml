@@ -8,7 +8,7 @@
 
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress3"
+        android:id="@+id/editTextUsername"
         android:layout_width="303dp"
         android:layout_height="53dp"
         android:layout_marginTop="44dp"
@@ -18,11 +18,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:autofillHints="no"
-        android:hint="@string/username"
-        android:textColorHint="@color/white"/>
+        android:hint="@string/username"/>
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress4"
+        android:id="@+id/editTextEmail"
         android:layout_width="293dp"
         android:layout_height="49dp"
         android:layout_marginTop="36dp"
@@ -30,7 +29,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress3"
+        app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
         android:hint="@string/email"
         android:textColorHint="@color/white"
         android:autofillHints="no"/>
@@ -44,9 +43,8 @@
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress4"
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
         android:hint="@string/password"
-        android:textColorHint="@color/white"
         android:autofillHints="no"/>
 
     <EditText
@@ -60,7 +58,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextPassword2"
         android:autofillHints="no"
-        android:textColorHint="@color/white"
         android:hint="@string/confirm_password"/>
 
     <EditText
@@ -68,25 +65,26 @@
         android:layout_width="303dp"
         android:layout_height="48dp"
         android:layout_marginTop="48dp"
+        android:autofillHints="no"
         android:ems="10"
+        android:hint="@string/dob"
         android:inputType="date"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword3"
-        android:hint="@string/dob"
-        android:autofillHints="no"
-        android:textColorHint="@color/white"/>
+        app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword3" />
 
     <Button
         android:id="@+id/BackButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:layout_marginBottom="116dp"
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.182"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
     <Button
         android:id="@+id/RegisterButton"
@@ -96,8 +94,10 @@
         android:text="@string/register"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.825"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.809"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDate"
+        app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
         android:id="@+id/revealPasswordCheckBox"

@@ -31,7 +31,8 @@ public class LoginFragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_login, container, false);
         Button register = view.findViewById(R.id.buttonRegister);
         Button login = view.findViewById(R.id.buttonLogin);
-        EditText passwordEditText = view.findViewById(R.id.editTextTextPassword);
+        EditText editTextEmail = view.findViewById(R.id.editTextEmailAddress);
+        EditText passwordEditText = view.findViewById(R.id.editTextPassword);
         CheckBox revealPasswordCheckbox = view.findViewById(R.id.revealPasswordCheckbox);
 
         register.setOnClickListener(new View.OnClickListener() {
