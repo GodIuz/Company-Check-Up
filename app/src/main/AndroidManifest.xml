@@ -19,6 +19,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CompanyCheckUp"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3643135016261199~6128936877"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

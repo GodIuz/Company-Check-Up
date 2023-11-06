@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import com.droidgeniuslabs.companycheck_up.R;
 import com.droidgeniuslabs.companycheck_up.data.ActiveIsologismosmosData;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -26,26 +27,30 @@ public class ActiveIsologismosFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        float pagia = 0;
-        float apothema=0;
-        float apaitiseis=0;
-        float diathesima=0;
-        float active=0;
-
-        FirebaseApp.initializeApp(requireContext());
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        ActiveIsologismosmosData activeIsologismosmosData = new ActiveIsologismosmosData();
-        activeIsologismosmosData.setActive(active);
-        activeIsologismosmosData.setPagia(pagia);
-        activeIsologismosmosData.setApothema(apothema);
-        activeIsologismosmosData.setApaitiseis(apaitiseis);
-        activeIsologismosmosData.setDiathesima(diathesima);
+        float pagia;
+        float apothema;
+        float apaitiseis;
+        float diathesima;
+        float active;
 
         View view = inflater.inflate(R.layout.fragment_active_isologismso, container, false);
 
         Button next = view.findViewById(R.id.NextButton);
         Button back = view.findViewById(R.id.BackButton2);
+        EditText editTextPagio = view.findViewById(R.id.editTextPagio);
+        EditText editTextApothema = view.findViewById(R.id.editTextApothema);
+        EditText editTextApaitiseis = view.findViewById(R.id.editTextTApaitiseis);
+        EditText editTextDithesima = view.findViewById(R.id.editTextDiathesima);
 
+        pagia=Float.parseFloat(editTextPagio.getText().toString());
+        apothema=Float.parseFloat(editTextApothema.getText().toString());
+        apaitiseis=Float.parseFloat(editTextApaitiseis.getText().toString());
+        diathesima=Float.parseFloat(editTextApaitiseis.getFontFeatureSettings());
+
+
+        FirebaseApp.initializeApp(requireContext());
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        ActiveIsologismosmosData activeIsologismosmosData = new ActiveIsologismosmosData();
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +71,11 @@ public class ActiveIsologismosFragment extends Fragment {
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
+                                activeIsologismosmosData.setActive(active);
+                                activeIsologismosmosData.setPagia(pagia);
+                                activeIsologismosmosData.setApothema(apothema);
+                                activeIsologismosmosData.setApaitiseis(apaitiseis);
+                                activeIsologismosmosData.setDiathesima(diathesima);
                                 Snackbar.make(view,"Data Saved",Snackbar.LENGTH_SHORT).show();
                             }
                         })

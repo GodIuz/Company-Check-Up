@@ -59,21 +59,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextApothema" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextApothema"
+        tools:ignore="TextContrastCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress7"
+        android:id="@+id/editTextDiathesima"
         android:layout_width="320dp"
         android:layout_height="60dp"
         android:layout_marginTop="56dp"
+        android:autofillHints="no"
         android:ems="10"
+        android:hint="@string/diathesima"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.461"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTApaitiseis"
-        android:hint="@string/diathesima"
-        android:autofillHints="no"/>
+        tools:ignore="TextContrastCheck" />
 
     <Button
         android:id="@+id/BackButton2"
@@ -83,10 +85,10 @@
         android:text="@string/back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress7"
-        app:layout_constraintVertical_bias="0.037" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextDiathesima"
+        app:layout_constraintVertical_bias="0.036" />
 
     <Button
         android:id="@+id/NextButton"
@@ -98,7 +100,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.828"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress7"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDiathesima"
         app:layout_constraintVertical_bias="0.037" />
 
 
