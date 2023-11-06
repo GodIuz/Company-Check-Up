@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.isologismos.ActiveIsologismosFragment">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Active"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.063" />
+
+    <EditText
+        android:id="@+id/editTextPagio"
+        android:layout_width="318dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="44dp"
+        android:autofillHints="no"
+        android:ems="10"
+        android:hint="@string/pagio"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/editTextApothema"
+        android:layout_width="316dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="52dp"
+        android:autofillHints="no"
+        android:ems="10"
+        android:hint="@string/apothema"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPagio" />
+
+    <EditText
+        android:id="@+id/editTextTApaitiseis"
+        android:layout_width="323dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="@string/apaitiseis"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextApothema" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress7"
+        android:layout_width="320dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.461"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTApaitiseis"
+        android:hint="@string/diathesima"
+        android:autofillHints="no"/>
+
+    <Button
+        android:id="@+id/BackButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress7"
+        app:layout_constraintVertical_bias="0.037" />
+
+    <Button
+        android:id="@+id/NextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.828"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress7"
+        app:layout_constraintVertical_bias="0.037" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

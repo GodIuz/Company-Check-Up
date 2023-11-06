@@ -78,7 +78,7 @@
         android:textColorHint="@color/white"/>
 
     <Button
-        android:id="@+id/BackButton"
+        android:id="@+id/BackButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="116dp"

@@ -4,6 +4,8 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,8 +19,6 @@ public class IsologismosFirstFragment extends Fragment {
     public IsologismosFirstFragment() {
         // Required empty public constructor
     }
-
-    @SuppressLint("MissingInflatedId")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class IsologismosFirstFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_isologismos_first, container, false);
 
         Button loadButton = view.findViewById(R.id.LoadButton);
-         Button newButton = view.findViewById(R.id.NewButton);
+        Button newButton = view.findViewById(R.id.NewButton);
 
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +35,13 @@ public class IsologismosFirstFragment extends Fragment {
             }
         });
 
+        newButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavController navController= Navigation.findNavController(v);
+                navController.navigate(R.id.action_isologismosFirstFragment_to_activeIsologismsoFragment);
+            }
+        });
         return view;
     }
 }

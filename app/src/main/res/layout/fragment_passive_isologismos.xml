@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.isologismos.PassiveIsologismosFragment">
+
+    <TextView
+        android:id="@+id/textPathitiko1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/pathitiko"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextKefalaio"
+        android:layout_width="283dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="32dp"
+        android:autofillHints="no"
+        android:ems="10"
+        android:hint="@string/kefalaio"
+        android:importantForAutofill="no"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPathitiko1" />
+
+    <EditText
+        android:id="@+id/editTextProvlepseis"
+        android:layout_width="299dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:hint="@string/provlepseis"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextKefalaio"
+        android:autofillHints="no" />
+
+    <EditText
+        android:id="@+id/editTextM_Ypoxrewseis"
+        android:layout_width="298dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="68dp"
+        android:ems="10"
+        android:hint="@string/m_ypoxrewseis"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.522"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextProvlepseis"
+        android:importantForAutofill="no" />
+
+    <EditText
+        android:id="@+id/editTextB_Ypoxrewseis"
+        android:layout_width="303dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="52dp"
+        android:ems="10"
+        android:hint="@string/b_ypoxrewseis"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextM_Ypoxrewseis"
+        android:importantForAutofill="no" />
+
+    <Button
+        android:id="@+id/BackButton3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextB_Ypoxrewseis"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <Button
+        android:id="@+id/NextButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.795"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextB_Ypoxrewseis"
+        app:layout_constraintVertical_bias="0.492"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

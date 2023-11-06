@@ -15,4 +15,15 @@
     <string name="new_data">New data</string>
     <string name="load_data">Load data</string>
     <string name="show_password">Show Password</string>
+    <string name="Active">Ενεργητικό</string>
+    <string name="pagio">Πάγιο</string>
+    <string name="apothema">Απόθεμα</string>
+    <string name="apaitiseis">Απαιτήσεις</string>
+    <string name="diathesima">Διαθέσιμα</string>
+    <string name="next">Next</string>
+    <string name="pathitiko">Παθητικό</string>
+    <string name="kefalaio">Κεφάλαιο</string>
+    <string name="b_ypoxrewseis">Βραχυπρόθεσμες Υποχρεώσεις</string>
+    <string name="m_ypoxrewseis">Μακροπρόθεσμες Υποχρεώσεις</string>
+    <string name="provlepseis">Προβλέψεις</string>
 </resources>

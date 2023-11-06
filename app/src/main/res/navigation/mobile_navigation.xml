@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_loginFragment_to_isologismosFirstFragment"
             app:destination="@id/isologismosFirstFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_isologismosFirstFragment2"
+            app:destination="@id/isologismosFirstFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -33,5 +36,30 @@
         android:id="@+id/isologismosFirstFragment"
         android:name="com.droidgeniuslabs.companycheck_up.ui.isologismos.IsologismosFirstFragment"
         android:label="fragment_isologismos_first"
-        tools:layout="@layout/fragment_isologismos_first" />
+        tools:layout="@layout/fragment_isologismos_first" >
+        <action
+            android:id="@+id/action_isologismosFirstFragment_to_activeIsologismsoFragment"
+            app:destination="@id/activeIsologismsoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeIsologismsoFragment"
+        android:name="com.droidgeniuslabs.companycheck_up.ui.isologismos.ActiveIsologismosFragment"
+        android:label="fragment_active_isologismso"
+        tools:layout="@layout/fragment_active_isologismso" >
+        <action
+            android:id="@+id/action_activeIsologismsoFragment_to_passiveIsologismosFragment"
+            app:destination="@id/passiveIsologismosFragment" />
+        <action
+            android:id="@+id/action_activeIsologismsoFragment_to_isologismosFirstFragment"
+            app:destination="@id/isologismosFirstFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passiveIsologismosFragment"
+        android:name="com.droidgeniuslabs.companycheck_up.ui.isologismos.PassiveIsologismosFragment"
+        android:label="fragment_passive_isologismos"
+        tools:layout="@layout/fragment_passive_isologismos" >
+        <action
+            android:id="@+id/action_passiveIsologismosFragment_to_activeIsologismsoFragment"
+            app:destination="@id/activeIsologismsoFragment" />
+    </fragment>
 </navigation>
