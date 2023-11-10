@@ -10,6 +10,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.droidgeniuslabs.companycheck_up.R;
 import com.droidgeniuslabs.companycheck_up.data.ActiveIsologismosmosData;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -40,53 +42,75 @@ public class ActiveIsologismosFragment extends Fragment {
         EditText editTextApothema = view.findViewById(R.id.editTextApothema);
         EditText editTextApaitiseis = view.findViewById(R.id.editTextTApaitiseis);
         EditText editTextDiathesima = view.findViewById(R.id.editTextDiathesima);
+        String  InputPagio = editTextPagio.getText().toString();
+        String InputApothema = editTextApothema.getText().toString();
+        String InputApaitiseis = editTextApaitiseis.getText().toString();
+        String InputDiathesima = editTextDiathesima.getText().toString();
 
-        pagia=Float.parseFloat(editTextPagio.getText().toString());
-        apothema=Float.parseFloat(editTextApothema.getText().toString());
-        apaitiseis=Float.parseFloat(editTextApaitiseis.getText().toString());
-        diathesima=Float.parseFloat(editTextDiathesima.getText().toString());
-        active=pagia+apothema+apaitiseis+diathesima;
+        if (!InputPagio.isEmpty()) {
+            if(!InputApothema.isEmpty()) {
+                if(!InputApaitiseis.isEmpty()) {
+                    if (InputDiathesima.isEmpty()) {
+                        pagia = Float.parseFloat(InputPagio);
+                        apothema = Float.parseFloat(InputApothema);
+                        apaitiseis = Float.parseFloat(InputApaitiseis);
+                        diathesima = Float.parseFloat(InputDiathesima);
+                        active = pagia + apothema + apaitiseis + diathesima;
 
-        FirebaseApp.initializeApp(requireContext());
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-        ActiveIsologismosmosData activeIsologismosmosData = new ActiveIsologismosmosData();
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavController navController = Navigation.findNavController(v);
-                navController.navigate(R.id.action_activeIsologismsoFragment_to_isologismosFirstFragment);
-            }
-        });
-
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                // Get a reference to the Firestore collection
-                CollectionReference collection = db.collection("/Users/UserData/Active Isologismos/Active Isologismos");
-
-                    // Add a document with the data
-                collection.add(activeIsologismosmosData)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                        FirebaseApp.initializeApp(requireContext());
+                        FirebaseFirestore db = FirebaseFirestore.getInstance();
+                        ActiveIsologismosmosData activeIsologismosmosData = new ActiveIsologismosmosData();
+                        back.setOnClickListener(new View.OnClickListener() {
                             @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                activeIsologismosmosData.setActive(active);
-                                activeIsologismosmosData.setPagia(pagia);
-                                activeIsologismosmosData.setApothema(apothema);
-                                activeIsologismosmosData.setApaitiseis(apaitiseis);
-                                activeIsologismosmosData.setDiathesima(diathesima);
-                                Snackbar.make(view,"Data Saved",Snackbar.LENGTH_SHORT).show();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
-                                Snackbar.make(view,"Data not Saved",Snackbar.LENGTH_SHORT).show();
+                            public void onClick(View v) {
+                                NavController navController = Navigation.findNavController(v);
+                                navController.navigate(R.id.action_activeIsologismsoFragment_to_isologismosFirstFragment);
                             }
                         });
-            }
-        });
 
+                        next.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                                // Get a reference to the Firestore collection
+                                CollectionReference collection = db.collection("/Users/UserData/Active Isologismos/Active Isologismos");
+
+                                // Add a document with the data
+                                collection.add(activeIsologismosmosData)
+                                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                            @Override
+                                            public void onSuccess(DocumentReference documentReference) {
+                                                activeIsologismosmosData.setActive(active);
+                                                activeIsologismosmosData.setPagia(pagia);
+                                                activeIsologismosmosData.setApothema(apothema);
+                                                activeIsologismosmosData.setApaitiseis(apaitiseis);
+                                                activeIsologismosmosData.setDiathesima(diathesima);
+                                                Snackbar.make(view, "Data Saved", Snackbar.LENGTH_SHORT).show();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Snackbar.make(view, "Data not Saved", Snackbar.LENGTH_SHORT).show();
+                                            }
+                                        });
+
+                                NavController navController = Navigation.findNavController(v);
+                                navController.navigate(R.id.action_activeIsologismsoFragment_to_passiveIsologismosFragment);
+                            }
+                        });
+                    }else {
+                        Toast.makeText(requireContext(),"Diathesima cannot be empty",Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(requireContext(),"Apaitiseis cannot be empty",Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(requireContext(),"Apothema cannot be empty",Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(requireContext(),"Pagia cannot be empty",Toast.LENGTH_SHORT).show();
+        }
         return view;
     }
 

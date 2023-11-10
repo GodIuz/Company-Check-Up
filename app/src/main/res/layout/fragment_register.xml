@@ -31,7 +31,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextUsername"
         android:hint="@string/email"
-        android:textColorHint="@color/white"
         android:autofillHints="no"/>
 
     <EditText

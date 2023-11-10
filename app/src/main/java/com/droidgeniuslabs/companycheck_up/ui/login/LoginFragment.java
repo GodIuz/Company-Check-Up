@@ -34,6 +34,8 @@ public class LoginFragment extends Fragment {
         EditText editTextEmail = view.findViewById(R.id.editTextEmailAddress);
         EditText passwordEditText = view.findViewById(R.id.editTextPassword);
         CheckBox revealPasswordCheckbox = view.findViewById(R.id.revealPasswordCheckbox);
+        String InputEmail = editTextEmail.getText().toString();
+        String InputPass =  passwordEditText.getText().toString();
 
         register.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,9 +50,17 @@ public class LoginFragment extends Fragment {
             public void onClick(View v) {
         if(isNetworkAvailable(requireContext()))
         {
-            NavController navController = Navigation.findNavController(v);
-            navController.navigate(R.id.action_loginFragment_to_isologismosFirstFragment);
-            Toast.makeText(requireContext(),"Welcome !",Toast.LENGTH_SHORT).show();
+            if(InputEmail.isEmpty()) {
+                if(InputPass.isEmpty()) {
+                    NavController navController = Navigation.findNavController(v);
+                    navController.navigate(R.id.action_loginFragment_to_isologismosFirstFragment);
+                    Toast.makeText(requireContext(), "Welcome !", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(requireContext(),"Password cannot be empty",Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(requireContext(),"Username cannot be empty",Toast.LENGTH_SHORT).show();
+            }
         }else{
             Toast.makeText(requireContext(),"Not Connected",Toast.LENGTH_SHORT).show();
         }
