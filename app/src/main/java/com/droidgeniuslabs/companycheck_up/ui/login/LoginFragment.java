@@ -1,6 +1,7 @@
 package com.droidgeniuslabs.companycheck_up.ui.login;
 
 import static com.droidgeniuslabs.companycheck_up.Utilities.NetworkUtils.isNetworkAvailable;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.LayoutInflater;
@@ -16,10 +17,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+
 import com.droidgeniuslabs.companycheck_up.R;
 
 public class LoginFragment extends Fragment {
 
+    private  Context context;
+    private boolean packageName;
 
     public static LoginFragment newInstance() {
         return new LoginFragment();
@@ -29,6 +33,8 @@ public class LoginFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_login, container, false);
+
+
         Button register = view.findViewById(R.id.buttonRegister);
         Button login = view.findViewById(R.id.buttonLogin);
         EditText editTextEmail = view.findViewById(R.id.editTextEmailAddress);
@@ -80,7 +86,9 @@ public class LoginFragment extends Fragment {
             }
         });
 
+
+
+
         return view;
     }
-
 }

@@ -1,3 +1,5 @@
+
+
 plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
@@ -25,6 +27,10 @@ android {
                 "proguard-rules.pro"
             )
         }
+        create("customDebugType") {
+            isDebuggable = true
+        }
+        
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
