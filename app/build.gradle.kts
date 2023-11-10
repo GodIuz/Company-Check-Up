@@ -11,7 +11,7 @@ android {
 
     defaultConfig {
         applicationId = "com.droidgeniuslabs.companycheck_up"
-        minSdk = 24
+        minSdk = 19
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
